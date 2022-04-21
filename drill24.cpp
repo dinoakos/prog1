@@ -71,7 +71,7 @@ int main(){
     cout <<"Matrix:\n" << m2 << endl;
 
 
-    cout << "2 szám:";
+    cout << "2 szám:\n";
     int x,y;
     cin >> x >> y;
 
@@ -85,7 +85,7 @@ int main(){
     cout << m3;
 
     Matrix<complex<double>> mcomp(10);
-    cout << "\nEnter 10 complex";
+    cout << "\nEnter 10 complex\n";
     complex<double> comp;
     for (int i = 0; i < 10; i++)
     {
@@ -101,7 +101,7 @@ int main(){
     cout << "sum:" << sum << endl;
 
     //6 int
-    cout << "adj meg hat intet";
+    cout << "adj meg hat intet\n";
     Matrix<int,2> m(2,3);
     for (int i = 0; i < 2; i++){ 
         for (int j = 0; j < 3; j++){
@@ -122,7 +122,7 @@ int main(){
 
 
     }catch(...){
-        cout<<"coki\n";
+        cout<<"baj van\n";
 
 
     }
