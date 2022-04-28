@@ -5,8 +5,6 @@
 
 using namespace std;
 
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
-
 void error(string s)
 {
     throw runtime_error(s);
@@ -16,7 +14,6 @@ void error(string s1, string s2)
 {
     throw runtime_error(s1 + s2);
 }
-// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * 
 
 struct Person {
     Person() { }
@@ -35,15 +32,16 @@ private:
 Person::Person(string ff, string ll, int aa)
     : first{ff}, last{ll}, a{aa}
 {
-    if (aa < 0 || 150 < aa) error("Person(): invalid age");
+    if (aa < 0 || 150 < aa) error("Rossz életkor");
     
-    string nn = ff + ll;        // check both names at once
-    for (char c : nn) {
+    string name = ff + ll;
+          
+    for (char c : name) {
         switch(c) {
             case ';': case ':': case '"': case '[': case ']': case '*':
             case '&': case '^': case '%': case '$': case '#': case '@':
             case '!':
-                error("Person(): bad char in names");
+                error("Rossz név");
                 break;
             default:
                 break;
@@ -65,7 +63,7 @@ istream& operator>>(istream& is, Person& p)
     int a;
 
     is >> f >> l >> a;
-    if (!is) error("Unable to read into Person");
+    if (!is) error("Nem tudtuk beolvasni");
 
     p = Person(f, l, a);
 
@@ -74,8 +72,9 @@ istream& operator>>(istream& is, Person& p)
 
 int main()
 try {
-    // Chapter 15 Drill
-    // Class definition drill
+    Person Goof{"Goofy","Goofy",63};
+
+    cout << Goof<<"\n";
 
     vector<Person> vp;
 
