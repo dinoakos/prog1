@@ -1,4 +1,4 @@
-//g++ -w -Wall -std=c++11 GUI/Graph.cpp GUI/Window.cpp GUI/GUI.cpp GUI/Simple_window.cpp drill13.cpp `fltk-config --ldflags --use-images` -o a3.out
+//g++ -w -Wall -std=c++11 GUI/Graph.cpp GUI/Window.cpp GUI/GUI.cpp GUI/Simple_window.cpp chdrill13.cpp `fltk-config --ldflags --use-images` -o drill13.out
 
 #include "./GUI/Graph.h"
 #include "./GUI/Simple_window.h"
@@ -24,7 +24,7 @@ int main(){
 			win.attach(grid);
 			win.wait_for_button();
 
-			//stupiiid rectengles
+			//keresztbe piros kockák
 			Rectangle r1 {Point{0, 0}, 100, 100};
 			win.attach(r1);
 			r1.set_fill_color(Color::red);
@@ -60,17 +60,17 @@ int main(){
 			win.wait_for_button();
 
 			//képek létrehozása
-			Image kep1 {Point {200,400}, "1.jpg"};
-			Image kep2 {Point {400,100}, "1.jpg"};
-			Image kep3 {Point {600,100}, "1.jpg"};
-			win.set_label("Pepe");
+			Image kep1 {Point {200,400}, "./GUI/badge.jpg"};
+			Image kep2 {Point {400,100}, "./GUI/badge.jpg"};
+			Image kep3 {Point {600,100}, "./GUI/badge.jpg"};
+			win.set_label("badge");
 			win.attach(kep1);
 			win.attach(kep2);
 			win.attach(kep3);
 			win.wait_for_button();
 
-			//100x100
-			Image boi {Point {0,0}, "1.jpg"};
+			//lepegeto
+			Image boi {Point {0,0}, "./GUI/badge.jpg"};
 			win.set_label("Dat boi");
 			win.attach(boi);
 
