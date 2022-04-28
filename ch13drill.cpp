@@ -60,9 +60,12 @@ int main(){
 			win.wait_for_button();
 
 			//képek létrehozása
-			Image kep1 {Point {200,400}, "./GUI/badge.jpg"};
-			Image kep2 {Point {400,100}, "./GUI/badge.jpg"};
-			Image kep3 {Point {600,100}, "./GUI/badge.jpg"};
+			Image kep1 {Point {200,400}, "GUI/badge.jpg"};
+			Image kep2 {Point {400,100}, "GUI/badge.jpg"};
+			Image kep3 {Point {600,100}, "GUI/badge.jpg"};
+			kep1.set_mask(Point{0,0},100,100);
+			kep2.set_mask(Point{0,0},100,100);
+			kep3.set_mask(Point{0,0},100,100);
 			win.set_label("badge");
 			win.attach(kep1);
 			win.attach(kep2);
@@ -70,7 +73,7 @@ int main(){
 			win.wait_for_button();
 
 			//lepegeto
-			Image boi {Point {0,0}, "./GUI/badge.jpg"};
+			Image boi {Point {0,0}, "GUI/badge.jpg"};
 			win.set_label("Dat boi");
 			win.attach(boi);
 
