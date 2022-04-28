@@ -1,5 +1,5 @@
-#include "Simple_window.h"
-#include "Graph.h"
+#include "./GUI/Graph.h"
+#include "./GUI/Simple_window.h"
 #include "std_lib_facilities.h"
 
 double one(double x){return 1;}
@@ -13,13 +13,13 @@ int main()
 	{
 
 		using namespace Graph_lib;
-		int constexpr xmax = 600;
-		int constexpr ymax = 600;
-		Simple_window win{ Point{100,100}, xmax, ymax, "Canvas"};
+		int  xmax = 600;
+		int  ymax = 600;
+		Simple_window win{ Point{100,100}, xmax, ymax, "Function Graphs"};
 		
-		constexpr int Origx = xmax/2; constexpr int Origy = ymax/2;
+		int Origx = xmax/2; int Origy = ymax/2;
 		Point Origo{Origx,Origy};
-		constexpr int xlen = 400; constexpr int ylen = 400;
+		int xlen = 400; int ylen = 400;
 
 
 		Axis x {Axis::x,Point{100,Origy}, xlen, 20, "1=20 pixels"};
@@ -30,9 +30,9 @@ int main()
 		win.attach(y);
 
 
-		constexpr int r_min = -10; constexpr int r_max = 11;
-		constexpr int xscale = 20; constexpr int yscale = 20;
-		constexpr int pts = 400;
+		int r_min = -10; int r_max = 11;
+		int xscale = 20; int yscale = 20;
+		int pts = 400;
 
 		Function constans{one, r_min, r_max, Origo, pts, xscale, yscale};
 		Function linearis{slope, r_min, r_max, Origo, pts, xscale, yscale};	Text label{Point{100,Origy+85}, "x/2"};
